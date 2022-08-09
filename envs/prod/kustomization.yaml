@@ -5,7 +5,7 @@ bases:
 - ../../base
 
 replicas:
-- name: sample-app
+- name: sample-app-k
   count: 3
 
 images:
