@@ -47,15 +47,15 @@ spec:
               value: {{ .Values.MYSQL_DATABASE | quote }}
           ports:
             - name: http
-              containerPort: 5501
+              containerPort: 80
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /ping
+              path: /
               port: http
           readinessProbe:
             httpGet:
-              path: /health
+              path: /
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
